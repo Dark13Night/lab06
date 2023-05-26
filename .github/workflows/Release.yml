@@ -30,7 +30,7 @@ jobs:
       run: cmake --build ${{github.workspace}}/build --target package_source
 
     - name: Make a release
-      uses: ncipollo/release-action@v1.0.0.0
+      uses: ncipollo/release-action@v1.0.0
       with:
         artifacts: "build/*.deb,build/*.tar.gz,build/*.zip"
         replacesArtifacts: false
