@@ -23,7 +23,7 @@ target_link_libraries(formatter_ex_lib formatter_lib)
 ```
 
 CMakeLists.txt contents for formatter_lib:
-
+```
 cmake_minimum_required(VERSION 3.4)
 
 project(formatter_lib)
