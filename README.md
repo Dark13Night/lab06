@@ -52,7 +52,7 @@ target_link_libraries(solver formatter_ex_lib formatter_lib solver_lib)
 Now let's create CMakeLists.txt to link all directories
 
 CMakeLists.txt contents:
-
+```
 cmake_minimum_required(VERSION 3.4)
 
 project(solver)
@@ -74,3 +74,4 @@ install(TARGETS solver
 )
 
 include(CPackConfig.cmake)
+```
