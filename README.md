@@ -117,9 +117,9 @@ name: CMake
 
 on:
  push:
-  branches: [master]
+  branches: [main]
  pull_request:
-  branches: [master]
+  branches: [main]
 
 jobs: 
  build_Linux:
@@ -138,7 +138,7 @@ jobs:
 
 ```
 Release.yml contents:
-
+```
 name: CMake
 
 on:
@@ -177,3 +177,4 @@ jobs:
         replacesArtifacts: false
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         allowUpdates: true
+```
