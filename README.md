@@ -5,7 +5,7 @@ Task 1
 We create CMakeLists.txt for formatter_ex_lib, formatter_lib and solver_application respectively
 
 CMakeLists.txt contents for formatter_ex_lib:
-'''
+```
 cmake_minimum_required(VERSION 3.4)
 
 project(formatter_ex_lib)
@@ -47,7 +47,7 @@ add_executable(solver /equation.cpp)
 target_include_directories(formatter_ex_lib PUBLIC /../formatter_lib /../formatter_ex_lib /../solver_lib)
 
 target_link_libraries(solver formatter_ex_lib formatter_lib solver_lib)
-'''
+```
 
 Now let's create CMakeLists.txt to link all directories
 
