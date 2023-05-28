@@ -5,9 +5,6 @@ on:
    tags:
      - v**
 
-permissions:
-  contents: write
-
 jobs: 
 
   build_packages_Linux:
@@ -28,12 +25,9 @@ jobs:
 
     - name: Build source package
       run: cmake --build ${{github.workspace}}/build --target package_source
-      
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1.0.1
-      env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Make a release
+      uses: ncipollo/release-action@v1.10.0
       with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+        artifacts: "build/*.deb,build/*.rpm,build/*.tar.gz,build/*.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
