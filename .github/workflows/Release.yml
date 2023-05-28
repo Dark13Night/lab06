@@ -28,7 +28,16 @@ jobs:
 
     - name: Build source package
       run: cmake --build ${{github.workspace}}/build --target package_source
-
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1.0.0
+      env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          
     - name: Make a release
       uses: ncipollo/release-action@v1.0.0
       with:
